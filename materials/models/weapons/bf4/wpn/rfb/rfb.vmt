@@ -1,0 +1,14 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/bf4/wpn/rfb/rfb_d"
+	"$bumpmap" "models/weapons/bf4/wpn/rfb/rfb_n"
+
+	"$halflambert" "1"
+
+	"$nodiffusebumplighting" "1"
+
+	$phong 1
+	$phongboost 0.04
+	$phongfresnelranges "[0.8 0.2 0.3]"
+	$phongexponent 8
+}

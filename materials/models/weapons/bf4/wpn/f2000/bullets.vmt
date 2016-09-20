@@ -1,0 +1,14 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/bf4/wpn/f2000/bullet_d"
+	"$bumpmap" "models/weapons/bf4/wpn/f2000/bullet_n"
+
+	"$halflambert" "1"
+
+	"$nodiffusebumplighting" "1"
+
+	$phong 1
+	$phongboost 0.05
+	$phongfresnelranges "[0.5 0.8 0.3]"
+	$phongexponent 6
+}

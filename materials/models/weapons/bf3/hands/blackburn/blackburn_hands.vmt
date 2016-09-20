@@ -1,0 +1,22 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/bf3/hands/blackburn/blackburn_hands_d"
+	"$bumpmap" "models/weapons/bf3/hands/blackburn/blackburn_hands_n"
+
+	"$halflambert" "1"
+
+	"$nodiffusebumplighting" "1"
+
+	$phong 1
+	$phongboost 0.3
+	$phongfresnelranges "[0.2 0.5 0.7]"
+	$phongexponent 6
+
+	$detail "models/weapons/bf3/hands/us/skin_detail.vtf"
+	$detailscale 6
+	$detailblendfactor 0.1
+	$detailblendmode 0.3
+
+	$ssbump		1
+	$SSBumpMathFix	1
+}

@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/bfh/hands/gang_enfo/glassdetail_test"
+	"$translucent" 1
+}

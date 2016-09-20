@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/bf4/wpn/f2000/lense_d"
+	"$translucent" 1
+}

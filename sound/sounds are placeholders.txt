@@ -1,0 +1,1 @@
+using various weapons sounds from gb, I will use BF3/4 sounds for final version.
