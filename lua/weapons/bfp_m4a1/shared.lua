@@ -1,4 +1,4 @@
-if CustomizableWeaponry then
+if not CustomizableWeaponry then return end
 
 AddCSLuaFile()
 AddCSLuaFile("sh_sounds.lua")
@@ -35,23 +35,33 @@ SWEP.ADSFireAnim = true
 
 SWEP.Attachments = {}
 
-SWEP.Animations = {fire = {"base_fire"},
+SWEP.Animations = {
+	fire = {"base_fire"},
 	reload = "base_reload",
 	reload_empty = "base_reloadempty",
 	idle = "base_idle",
-	draw = "base_ready"}
+	draw = "base_ready"
+}
 	
-SWEP.Sounds = {base_ready = {{time = 0.5, sound = "ROLEPLAY_AKS74U_ROF"},
-	{time = 1.2, sound = "ROLEPLAY_AK74_BOLTBACK"},
-	{time = 1.4, sound = "ROLEPLAY_AK74_BOLTRELEASE"}},
+SWEP.Sounds = {
+	base_ready = {
+		{time = 0.5, sound = "ROLEPLAY_AKS74U_ROF"},
+		{time = 1.2, sound = "ROLEPLAY_AK74_BOLTBACK"},
+		{time = 1.4, sound = "ROLEPLAY_AK74_BOLTRELEASE"}
+	},
 
-	base_reload = {{time = 0.4, sound = "ROLEPLAY_AK74_MAGOUT"},
-	{time = 2, sound = "ROLEPLAY_AK74_MAGIN"}},
+	base_reload = {
+		{time = 0.4, sound = "ROLEPLAY_AK74_MAGOUT"},
+		{time = 2, sound = "ROLEPLAY_AK74_MAGIN"}
+	},
 	
-	base_reloadempty = {{time = 0.4, sound = "ROLEPLAY_AK74_MAGOUT"},
-	{time = 2, sound = "ROLEPLAY_AK74_MAGIN"},
-	{time = 3.4, sound = "ROLEPLAY_AK74_BOLTBACK"},
-	{time = 3.6, sound = "ROLEPLAY_AK74_BOLTRELEASE"}}}
+	base_reloadempty = {
+		{time = 0.4, sound = "ROLEPLAY_AK74_MAGOUT"},
+		{time = 2, sound = "ROLEPLAY_AK74_MAGIN"},
+		{time = 3.4, sound = "ROLEPLAY_AK74_BOLTBACK"},
+		{time = 3.6, sound = "ROLEPLAY_AK74_BOLTRELEASE"}
+	}
+}
 
 SWEP.SpeedDec = 30
 
@@ -81,8 +91,10 @@ SWEP.Primary.DefaultClip	= 30
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "5.45x39MM"
 
+SWEP.FireSound = "BFPROJECT_M4A1_FIRE"
+SWEP.FireSoundSuppressed = "BFPROJECT_M4A1_FIRE"
+
 SWEP.FireDelay = 0.0922
-SWEP.FireSound = "ROLEPLAY_AK74_FIRE"
 SWEP.Recoil = 1.223
 
 SWEP.HipSpread = 0.043
@@ -102,9 +114,6 @@ SWEP.ReloadHalt = 1.5
 SWEP.ReloadHalt_Empty = 1.5
 
 function SWEP:IndividualThink()
-
-self.Animations.draw = "base_draw"
-self.DeployTime = 0.3
-end
-
+	self.Animations.draw = "base_draw"
+	self.DeployTime = 0.3
 end
