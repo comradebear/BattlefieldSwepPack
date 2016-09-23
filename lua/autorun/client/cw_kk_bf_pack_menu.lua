@@ -1,12 +1,35 @@
 AddCSLuaFile()
 
-local numRigs = 5
-local strCvar = "cw_kk_bf_rig"
+BFPACK = BFPACK or {}
 
+//-----------------------------------------------------------------------------
+// content
+//-----------------------------------------------------------------------------
 
+BFPACK.strRigCvar = "cw_kk_bf_rig"
+BFPACK.tblRigModels = {
+	"models/weapons/bfpack/hands/hands_pilot_bf4.mdl",
+	"models/weapons/bfpack/hands/hands_rus_bf3.mdl",
+	"models/weapons/bfpack/hands/hands_rus_bf4.mdl",
+	"models/weapons/bfpack/hands/hands_sp_shanghi_bf4.mdl",
+	"models/weapons/bfpack/hands/hands_swat_mastermind_bfh.mdl",
+	"models/weapons/bfpack/hands/hands_swat_professional_bfh.mdl",
+	"models/weapons/bfpack/hands/hands_swat_technician_bf4.mdl",
+	"models/weapons/bfpack/hands/hands_usa_bf3.mdl",
+	"models/weapons/bfpack/hands/hands_usa_bf4.mdl",
+	"models/weapons/bfpack/hands/hands_blackburn_bf3.mdl",
+	"models/weapons/bfpack/hands/hands_gang_enforcer_bf4.mdl",
+	"models/weapons/bfpack/hands/hands_gang_operator_bf4.mdl",
+	"models/weapons/bfpack/hands/hands_gang_operator_bfh.mdl",
+	"models/weapons/bfpack/hands/hands_chn_bf4.mdl",
+}
 
+//-----------------------------------------------------------------------------
+// init for SpawnMenu tab and base think
+//-----------------------------------------------------------------------------
 
-local cvarObj = CreateClientConVar(strCvar, 1, true, false)
+BFPACK._numRigs = table.Count(BFPACK.tblRigModels)
+BFPACK._cvRigCvar = CreateClientConVar(BFPACK.strRigCvar, 1, true, false)
 
 local function updatePanel(panel)
 	panel:ClearControls()
@@ -16,8 +39,8 @@ local function updatePanel(panel)
 		Label = "Rig:",
 		Type = "Integer",
 		Min = "1",
-		Max = numRigs,
-		Command = strCvar
+		Max = BFPACK._numRigs,
+		Command = BFPACK.strRigCvar
 	})
 end
 

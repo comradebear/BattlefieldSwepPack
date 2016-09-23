@@ -6,7 +6,7 @@ include("sh_sounds.lua")
 
 if CLIENT then
 	SWEP.DrawCrosshair = false
-	SWEP.PrintName = "M4A1"
+	SWEP.PrintName = "hand code prevw"
 	SWEP.CSMuzzleFlashes = true
 	
 	SWEP.IronsightPos = Vector(-2.244, -3.343, 0.653)
@@ -27,6 +27,7 @@ if CLIENT then
 	-- SWEP.WMPos = Vector(-0.8, 4.2, 0.5)
 	-- SWEP.WMAng = Vector(-4, 0, 180)
 	
+	SWEP.MuzzleAttachmentName = "muzzle"
 end
 
 SWEP.MuzzleVelocity = 880 -- in meter/s
@@ -36,14 +37,13 @@ SWEP.ADSFireAnim = true
 SWEP.Attachments = {}
 
 SWEP.Animations = {
-	draw = "draw",
+	draw = "base_draw",
 	
-	fire = {"fire01"},
-	fire_aim = "iron_fire01",
-	fire_empty = "dryfire1",
-	reload = "reload",
-	reload_empty = "reload",
-	idle = "idle01",
+	fire = "base_fire",
+	fire_aim = "iron_fire",
+	reload = "base_reload",
+	reload_empty = "base_reloadempty",
+	idle = "base_idle",
 }
 	
 SWEP.Sounds = {
@@ -83,7 +83,7 @@ SWEP.Instructions	= ""
 
 SWEP.ViewModelFOV	= 65
 SWEP.ViewModelFlip	= false
-SWEP.ViewModel		= "models/weapons/bfpack/v_m4a1.mdl"
+SWEP.ViewModel		= "models/weapons/v_ak74.mdl"
 SWEP.WorldModel		= "models/worldmodels/w_ak47.mdl"
 
 SWEP.Spawnable			= true
@@ -115,3 +115,7 @@ SWEP.ReloadTime = 3
 SWEP.ReloadTime_Empty = 4.2
 SWEP.ReloadHalt = 1.5
 SWEP.ReloadHalt_Empty = 1.5
+
+// this is just for preview, dont use in sweps
+SWEP.initHandsMdl = "models/weapons/v_hands_ins_h.mdl"
+function SWEP:updateRigModel() end
