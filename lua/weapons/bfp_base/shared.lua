@@ -15,6 +15,12 @@ function SWEP:fireAnimFunc()
 		suffix = "_aim"
 	end
 	
+	if self:Clip1() < 2 then
+		if self.Animations["fire_last" .. suffix] then
+			suffix = "_last" .. suffix
+		end
+	end
+	
 	self:sendWeaponAnim("fire" .. suffix)
 end
 
