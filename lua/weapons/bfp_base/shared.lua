@@ -127,3 +127,16 @@ if CLIENT then
 		end
 	end
 end
+
+//-----------------------------------------------------------------------------
+// sprintAnimFunc
+// - needs sprint transitions hook to work
+//-----------------------------------------------------------------------------
+
+function SWEP:sprintAnimFunc()
+	if self:isRunning() then
+		self:sendWeaponAnim("sprint")
+	else
+		self:sendWeaponAnim("idle")
+	end
+end
