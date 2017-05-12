@@ -11,17 +11,29 @@ SWEP.Base = "cw_base"
 function SWEP:fireAnimFunc()
 	local suffix = ""
 	
-	if self:isAiming() then
-		suffix = "_aim"
+	if self:Clip1() < 2 then
+		suffix = "_last"
 	end
 	
-	if self:Clip1() < 2 then
-		if self.Animations["fire_last" .. suffix] then
-			suffix = "_last" .. suffix
-		end
+	if self:isAiming() then
+		suffix = suffix .. "_aim"
 	end
 	
 	self:sendWeaponAnim("fire" .. suffix)
+end
+
+//-----------------------------------------------------------------------------
+// drawAnimFunc for loaded and empty draws to use separate anims
+//-----------------------------------------------------------------------------
+
+function SWEP:drawAnimFunc()
+	local suffix = ""
+	
+	if self:Clip1() == 0 then
+		suffix = "_empty"
+	end
+	
+	self:sendWeaponAnim("draw" .. suffix)
 end
 
 //-----------------------------------------------------------------------------
